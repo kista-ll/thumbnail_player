@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+    <script>
+        var video, thumbnail;
+        window.onload = function () {
+            video = document.getElementById("video");
+            thumbnail = document.getElementById("thumbnail");
+            setInterval(Syncthumbnail, 100);
+        }
+        function Syncthumbnail() {
+            var position = Math.floor(video.currentTime / video.duration * 100);
+            console.log(position)
+            var x = position;
+            var y = Math.floor(position / 10)
+            thumbnail.style.backgroundPositionX = -80 * x + "px";
+            thumbnail.style.backgroundPositionY = -45 * y + "px";
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <video id="video" src="movie/neko.mp4" style="width: 800px;height:450px;" controls></video>
+    </div>
+    <div style="width: 800px;height:450px">
+        <div id="thumbnail"
+            style="width:80px;height: 45px;background-image: url('thumbnail/neko.jpg');transform:scale(10);transform-origin: left top;background-position: 0 0; ">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
