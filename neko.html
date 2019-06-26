@@ -10,9 +10,9 @@
             setInterval(Syncthumbnail, 100);
         }
         function Syncthumbnail() {
-            var position = Math.floor(video.currentTime / video.duration * 100);
+            var position = Math.floor(video.currentTime/5);
             console.log(position)
-            var x = position;
+            var x = position % 10;
             var y = Math.floor(position / 10)
             thumbnail.style.backgroundPositionX = -80 * x + "px";
             thumbnail.style.backgroundPositionY = -45 * y + "px";
